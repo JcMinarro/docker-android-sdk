@@ -33,3 +33,6 @@ RUN android-sdk-install tools
 
 # Install Android Platform-Tools and Android Platforms
 RUN android-sdk-install platform-tools,${ANDROID_API_LEVELS}
+
+# Install Android and Google extras dependencies
+RUN android-sdk-install extra
