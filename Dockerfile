@@ -26,3 +26,6 @@ RUN ln -s ${ANDROID_SDK_PATH}/tools/android ${USR_BIN_PATH}/android
 # Copy local bins to bin path
 COPY bin/* ${USR_BIN_PATH}
 RUN chmod 755 ${USR_BIN_PATH}/android-sdk-install
+
+# Install Android Tools
+RUN android-sdk-install tools
