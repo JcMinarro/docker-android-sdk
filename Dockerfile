@@ -3,6 +3,7 @@ MAINTAINER Jc Miñarro <josecarlos.minarro@gmail.com>
 
 ENV ANDROID_SDK_VERSION 24.4.1
 ENV ANDROID_API_LEVELS android-16,android-17,android-18,android-19,android-20,android-21,android-22,android-23,android-24,android-25
+ENV ANDROID_BUILD_TOOLS build-tools-23.0.2
 ENV ANDROID_SDK_PATH /usr/local/etc/android
 ENV ANDROID_HOME /usr/local/etc/android
 ENV USR_BIN_PATH /usr/local/bin
@@ -36,3 +37,6 @@ RUN android-sdk-install platform-tools,${ANDROID_API_LEVELS}
 
 # Install Android and Google extras dependencies
 RUN android-sdk-install extra
+
+# Install Build-Tools
+RUN android-sdk-install ${ANDROID_BUILD_TOOLS}
