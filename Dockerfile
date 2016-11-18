@@ -2,6 +2,7 @@ FROM java:openjdk-8-jdk
 MAINTAINER Jc Miñarro <josecarlos.minarro@gmail.com>
 
 ENV ANDROID_SDK_VERSION 24.4.1
+ENV ANDROID_API_LEVELS android-16,android-17,android-18,android-19,android-20,android-21,android-22,android-23,android-24,android-25
 ENV ANDROID_SDK_PATH /usr/local/etc/android
 ENV ANDROID_HOME /usr/local/etc/android
 ENV USR_BIN_PATH /usr/local/bin
@@ -29,3 +30,6 @@ RUN chmod 755 ${USR_BIN_PATH}/android-sdk-install
 
 # Install Android Tools
 RUN android-sdk-install tools
+
+# Install Android Platform-Tools and Android Platforms
+RUN android-sdk-install platform-tools,${ANDROID_API_LEVELS}
