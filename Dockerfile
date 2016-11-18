@@ -40,3 +40,9 @@ RUN android-sdk-install extra
 
 # Install Build-Tools
 RUN android-sdk-install ${ANDROID_BUILD_TOOLS}
+
+# Cleaning APT
+RUN apt-get clean autoclean && \
+    apt-get autoremove -y  && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    
