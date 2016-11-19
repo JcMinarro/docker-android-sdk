@@ -41,6 +41,9 @@ RUN android-sdk-install extra
 # Install Build-Tools
 RUN android-sdk-install ${ANDROID_BUILD_TOOLS}
 
+# Install Android SDK Licenses
+ADD licenses ${ANDROID_SDK_PATH}/licenses
+
 # Cleaning APT
 RUN apt-get clean autoclean && \
     apt-get autoremove -y  && \
